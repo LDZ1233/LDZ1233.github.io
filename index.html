@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta content="origin" name="referrer">
-    <meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image">
-    <title>Google</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仿Google搜索</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="google_logo.png" type="image/png"> <!-- 浏览器标签显示logo图片 -->
 </head>
 <body>
     <div class="container">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAkFBMVEX///8AAADo6OiwMDBtbW3f39+cnJybm5ujp6e2traamprq6uq+vr5xcXEhISGnp6fIyMhYWFgjIyPDw8Ojo6M1NTXBwcGqqqp2dnaUlJSFhYWaWlo9PT2RkZFx8fEhISEXFxaJiYmGhobCwsKnpyHc3Nx5eXlLS0uZmZnFxcUrKyuAgIAsLCxWVlY7OztKSkoODg5QUFBBQUEeWV9uAAAHGElEQVR4nO2c63aqMBCGscqCG9DSsHRyFbRv//8e7QgkEDNcn5iZvvOrcr7hIEII0gCIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIuED42+fbv5t8Y61Hzp8fPPr66/Ovvfyy/fF1+G1z1s5T8RrWbsh2Vi4ikfI9KszmnwlqM74sJMuO5RlnTXeJrMyhGGeX1GMsoENJspO59HNhkUwD7hv8AK3yDZT+6zXsjFb4DCmXYrfIFcxZ0TUL37vUpOPd/qP7G6Nmvmr7l+9+b0WQJ+5uxnvRXOogUzlcLVR2vUMVqavmtlfN6AFbz6PB7Gvm4MIrfzAp0DYjsNS3NQkKExA/4y4JvURuXoA1OK7Cj0Y+DP6vB8sk1P5RygZVcCrgcbFZBpThRScPb96Mt9a0oQu4oezET1bt0fuGDBF5ScTVIuoxCNXrczNW23RfyJvBuxjEmG4YdpWgTuFj4ayWiQW07D36FV2f/edFlLOeNcONmWqFfKhNwFCUkR7Og3fgIY1kiLMIb1EGsdquZ4G+zHKhRu3Aawx4MNi6gmyxIQYpsAydGgToMR7TImZzF2xMHNeQhW3He8Q8G3k1Up4StfFODX/eoIH4I7IXAxceKZw5fF6EbzUXKT3c3yyPHK2nSkL1/WkKFbAXpyw1CL1RBdxqFZsU8yBs1fBMOJXpZmGFLBaAXYRF8xEMtRCyWoR8UN0EnQlI23W7AcKQwaMlToaGDOA7cGZoaYZLkEYHLNpgn1OKCqWc8u+oYOusNgkHZ8/DIrjSh4y2sHxxh8wWh8zKYWGSuEB6v4Ff8OHGAEOm94EYtBoj9jIbCDB2eO0l2xYYEYp3qhdzFqAFCivwWEth5IJdleVQ1TBxdkI6COxiJW8ChUqgWln1tRJZm7FCaG2IDzkVYaVmAz0m6EZz0U4f3gAarVfGIBR8ghbFg7ibBBZkqhc2F80wsS0xiIhdkZhOxzcbH5mV9HbghyKCVyyHkGKsdaIWKWhWoMRFovWG/EGmz3FD0RZGDNnE+EEn6szWGcVpVkmi5YtIkc5AG7wQJkSBc7ONNAkCGCQ9FjAPs5DBQ2WySk6Ks5GVhVa7w1KAB9Ha6uKGIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIvkl/Dr8HTLJpeGSY/gAAAABJRU5ErkJggg==" class="logo" alt="Google Logo">
-        <form class="search-box" method="get" action="https://www.baidu.com/s">
-            <input type="text" name="wd" aria-label="Search">
-            <input type="submit" value="Google 搜索">
+        <div class="logo">
+            <span class="blue">G</span><span class="red">o</span><span class="yellow">o</span><span class="blue">g</span><span class="green">l</span><span class="red">e</span>
+        </div>
+        <form class="search-form" action="https://www.baidu.com/s" method="get">
+            <input type="text" name="wd" class="search-input" placeholder="搜索">
+            <input type="submit" value="百度一下" class="search-button">
         </form>
-    </div>
-    <div class="footer">
-        <p>Google 提供的服务</p>
     </div>
 </body>
 </html>
