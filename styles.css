@@ -26,8 +26,12 @@ body {
     align-items: center;
 }
 
-.left-icons img, .right-icons img {
-    margin-right: 10px;
+.right-icons .icon {
+    width: 24px;
+    height: 24px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    margin-left: 10px;
 }
 
 .google-logo {
@@ -55,13 +59,27 @@ body {
     display: flex;
     align-items: center;
     box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    position: relative;
 }
 
 .search-bar input {
-    width: 100%;
+    width: calc(100% - 68px);
     border: none;
     outline: none;
     font-size: 16px;
+}
+
+.mic-icon, .camera-icon {
+    width: 24px;
+    height: 24px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    position: absolute;
+    right: 36px;
+}
+
+.camera-icon {
+    right: 10px;
 }
 
 .buttons {
