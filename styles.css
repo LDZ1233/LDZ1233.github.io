@@ -1,88 +1,51 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #ffffff;
-}
-
-.google-logo {
-    margin-bottom: 20px;
-}
-
-.google-logo img {
-    width: 272px;
-    height: 92px;
-}
-
-.search-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.search-bar {
-    width: 584px;
-    height: 44px;
-    border: 1px solid #dfe1e5;
-    border-radius: 24px;
-    padding: 0 14px;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.search-bar input {
-    width: calc(100% - 68px);
-    border: none;
-    outline: none;
-    font-size: 16px;
-}
-
-.mic-icon, .camera-icon {
-    width: 24px;
-    height: 24px;
-    background-color: #e0e0e0;
-    border-radius: 50%;
-    position: absolute;
-    right: 36px;
-}
-
-.camera-icon {
-    right: 10px;
-}
-
-.buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.buttons button {
-    background-color: #f8f9fa;
-    border: 1px solid #f8f9fa;
-    padding: 11px 16px;
-    border-radius: 4px;
-    color: #3c4043;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.buttons button:hover {
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    border: 1px solid #dadce0;
-}
-
-.language-options {
-    margin-top: 20px;
-}
-
-.language-options a {
-    color: #1a0dab;
-    text-decoration: none;
+body {  
+    font-family: Arial, sans-serif;  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+    justify-content: center;  
+    height: 100vh;  
+    margin: 0;  
+    background-color: #f4f4f4;  
+}  
+  
+header {  
+    text-align: center;  
+    margin-bottom: 20px;  
+}  
+  
+h1 {  
+    color: #333;  
+}  
+  
+form {  
+    width: 400px;  
+    display: flex;  
+    justify-content: space-between;  
+    margin-bottom: 20px;  
+}  
+  
+form input[type="text"] {  
+    flex: 1;  
+    padding: 10px;  
+    border: 1px solid #ccc;  
+    border-radius: 4px;  
+}  
+  
+form button {  
+    padding: 10px 20px;  
+    background-color: #007bff;  
+    color: white;  
+    border: none;  
+    border-radius: 4px;  
+    cursor: pointer;  
+}  
+  
+form button:hover {  
+    background-color: #0056b3;  
+}  
+  
+#time-weather {  
+    font-size: 18px;  
+    color: #555;  
 }
