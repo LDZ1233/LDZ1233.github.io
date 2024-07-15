@@ -3,17 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cool Search Page</title>
+    <title>仿Google搜索</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- 引入 Google 字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Product+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://www.google.com/favicon.ico" type="image/x-icon"> <!-- 使用Google的favicon -->
 </head>
 <body>
+    <div class="header">
+        <div class="header-links">
+            <a href="#">Gmail</a>
+            <a href="#">图片</a>
+            <div class="icon-grid">&#xE5C3;</div> <!-- Google Apps图标 -->
+            <a href="#"><button class="login-button">登录</button></a>
+        </div>
+    </div>
     <div class="container">
         <div class="logo">
-            <h1>MyCoolSearch</h1>
+            <span class="blue">G</span><span class="red">o</span><span class="yellow">o</span><span class="blue">g</span><span class="green">l</span><span class="red">e</span>
         </div>
-        <div class="search-box">
-            <input type="text" placeholder="Search...">
-            <button>Search</button>
+        <form class="search-form" action="https://www.google.com.hk/search" method="get">
+            <div class="search-bar">
+                <div class="search-icon">&#x1F50D;</div> <!-- 搜索图标 -->
+                <input type="text" name="q" class="search-input" placeholder="搜索">
+                <div class="search-icons">
+                    <div class="mic-icon">&#x1F3A4;</div> <!-- 麦克风图标 -->
+                    <div class="lens-icon">&#x1F50E;</div> <!-- Lens图标 -->
+                </div>
+            </div>
+            <div class="button-group">
+                <input type="submit" value="Google 搜索" class="search-button">
+                <input type="submit" value="手气不错" class="lucky-button" onclick="this.form.action='https://www.google.com.hk/search?btnI=I';">
+            </div>
+        </form>
+        <div class="footer">
+            Google 提供：
+            <a href="https://www.google.com">English</a>
+        </div>
+        <div class="footer-links">
+            <a href="#">关于 Google</a>
+            <a href="#">广告</a>
+            <a href="#">商务</a>
+            <a href="#">Google 搜索的运作方式</a>
+            <a href="#">隐私权</a>
+            <a href="#">条款</a>
+            <a href="#">设置</a>
         </div>
     </div>
 </body>
