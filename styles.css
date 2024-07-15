@@ -11,15 +11,33 @@ body {
     text-align: center;
 }
 
-.logo img {
-    width: 300px;
-    margin-bottom: 20px;
+.logo {
+    font-size: 92px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.logo .blue {
+    color: #4285F4;
+}
+
+.logo .red {
+    color: #EA4335;
+}
+
+.logo .yellow {
+    color: #FBBC05;
+}
+
+.logo .green {
+    color: #34A853;
 }
 
 .search-form {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 .search-input {
