@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D斜度旋转星空</title>
+    <title>星轨弧线背景</title>
     <style>
         body, html {
             margin: 0;
@@ -27,10 +27,11 @@
         canvas.height = window.innerHeight;
 
         const stars = [];
-        const numStars = 200;
-        const centerX = canvas.width / 2;
+        const numStars = 150;
+        // 星轨的旋转中心在右半平面
+        const centerX = canvas.width * 0.75;  
         const centerY = canvas.height / 2;
-        const maxDepth = canvas.width; // 视差深度模拟
+        const maxDepth = canvas.width;
 
         class Star {
             constructor() {
@@ -38,19 +39,21 @@
             }
 
             reset() {
-                this.angle = Math.random() * Math.PI * 2;  // 随机弧度
-                this.radius = Math.random() * canvas.width / 2;  // 随机半径
-                this.size = Math.random() * 2 + 1;
-                this.speed = Math.random() * 0.05 + 0.01;
-                this.depth = Math.random() * maxDepth;  // Z轴深度
+                // 只在指定弧度范围内生成星星
+                const angleOffset = Math.PI / 4;  // 控制弧线范围
+                this.angle = (Math.random() * angleOffset) - angleOffset / 2 + Math.PI / 2;  
+                this.radius = Math.random() * canvas.width / 3 + 100;  
+                this.size = Math.random() * 1.5 + 0.5;
+                this.speed = Math.random() * 0.03 + 0.01;
+                this.depth = Math.random() * maxDepth;  
             }
 
             update() {
                 this.angle += this.speed;
-                if (this.angle > Math.PI * 2) {
-                    this.angle -= Math.PI * 2;
+                if (this.angle > Math.PI * 1.5) { 
+                    this.reset();
                 }
-                this.depth -= 2;  // 向中心推进
+                this.depth -= 1.5;
                 if (this.depth <= 0) {
                     this.reset();
                 }
