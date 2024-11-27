@@ -1,136 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Search Page</title>
-    <link rel="icon" href="gg.ico" type="image/x-icon"> <!-- 添加 favicon -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #ffffff;
-            position: relative;
-        }
-        .container {
-            text-align: center;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .logo {
-            font-family: 'Product Sans', sans-serif;
-            font-size: 64px;
-            color: #4285F4;
-            margin-bottom: 20px;
-            position: absolute;
-            top: calc(100vh * 0.382 - 100px);
-            left: 50%;
-            transform: translateX(-50%);
-            transition: transform 0.2s;
-        }
-        .logo:hover {
-            transform: translateX(-50%) scale(1.1);
-        }
-        .logo span:nth-child(2) { color: #EA4335; }
-        .logo span:nth-child(3) { color: #FBBC05; }
-        .logo span:nth-child(4) { color: #34A853; }
-        .logo span:nth-child(5) { color: #EA4335; }
-        .logo span:nth-child(6) { color: #4285F4; }
-        .search-box {
-            position: absolute;
-            top: calc(100vh * 0.382);
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-        }
-        .search-box form {
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-        .search-box input[type="text"] {
-            width: 100%;
-            height: 40px;
-            padding: 0 50px 0 20px;
-            font-size: 16px;
-            border: 1px solid #dfe1e5;
-            border-radius: 24px;
-            outline: none;
-            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
-            transition: box-shadow 0.2s ease-in-out;
-        }
-        .search-box input[type="text"]:hover {
-            box-shadow: 0 4px 12px rgba(32, 33, 36, 0.5);
-        }
-        .search-box input[type="text"]:focus {
-            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.40);
-        }
-        .search-box button {
-            position: absolute;
-            right: 10px;
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-            color: #888;
-            transition: transform 0.2s;
-        }
-        .search-box button:hover {
-            transform: scale(1.2);
-        }
-        .buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            position: absolute;
-            top: calc(100vh * 0.382 + 60px);
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .button {
-            width: 100px;
-            height: 35px;
-            margin: 0 5px;
-            padding: 0;
-            font-size: 14px;
-            color: black;
-            background-color: #f1f1f1;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            text-decoration: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
-            transition: background-color 0.2s ease-in-out;
-        }
-        .button:hover {
-            background-color: #c4c7ce;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>可编辑圆角矩形</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-            <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-        </div>
-        <div class="search-box">
-            <form action="https://www.baidu.com/s" method="get" target="_blank">
-                <input type="text" name="wd" placeholder=" " id="search">
-                <button type="submit">🔍</button>
-            </form>
-        </div>
-        <div class="buttons">
-            <a href="https://www.google.com" class="button">Google 搜索</a>
-            <a href="https://scholar.google.com" class="button">谷歌学术</a>
-            <a href="https://abshare.github.io/" class="button">手气不错</a>
-            <a href="https://zh.singlelogin.re/" class="button">Z-library</a>
-        </div>
-    </div>
+<button id="addBoxButton">添加圆角矩形</button>
+<div id="container"></div>
+
+<script src="script.js"></script>
 </body>
 </html>
