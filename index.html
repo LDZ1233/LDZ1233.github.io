@@ -32,8 +32,10 @@
     <canvas id="starCanvas"></canvas>
     <button id="musicToggle">🎵 播放音乐</button>
 
+    <!-- 确保音频文件路径和格式正确 -->
     <audio id="backgroundMusic" loop>
         <source src="your-music-file.mp3" type="audio/mpeg">
+        <source src="your-music-file.ogg" type="audio/ogg">
         您的浏览器不支持音频元素。
     </audio>
 
@@ -111,17 +113,17 @@
 
         let isPlaying = false;
 
-        // 使用muted调试
-        backgroundMusic.muted = true;  // 初始设置为静音，直到播放
+        // 初始将音频静音，帮助浏览器自动播放
+        backgroundMusic.muted = true;
 
+        // 添加用户点击启动音频播放的功能
         musicToggle.addEventListener('click', () => {
             if (isPlaying) {
                 backgroundMusic.pause();
                 musicToggle.textContent = '🎵 播放音乐';
             } else {
-                // 先播放，确保能够播放成功
                 backgroundMusic.play().then(() => {
-                    backgroundMusic.muted = false;  // 取消静音
+                    backgroundMusic.muted = false; // 播放时取消静音
                     musicToggle.textContent = '⏸ 暂停音乐';
                 }).catch((error) => {
                     console.error("音乐播放失败", error);
@@ -133,4 +135,3 @@
     </script>
 </body>
 </html>
-
