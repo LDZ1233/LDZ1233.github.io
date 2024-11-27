@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>闪烁星星背景</title>
+    <title>3D斜度旋转星空</title>
     <style>
         body, html {
             margin: 0;
@@ -27,45 +27,51 @@
         canvas.height = window.innerHeight;
 
         const stars = [];
-        const numStars = 100;
+        const numStars = 200;
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const maxDepth = canvas.width; // 视差深度模拟
 
         class Star {
-            constructor(x, y, size, speed) {
-                this.x = x;
-                this.y = y;
-                this.size = size;
-                this.speed = speed;
-                this.opacity = Math.random();
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.angle = Math.random() * Math.PI * 2;  // 随机弧度
+                this.radius = Math.random() * canvas.width / 2;  // 随机半径
+                this.size = Math.random() * 2 + 1;
+                this.speed = Math.random() * 0.05 + 0.01;
+                this.depth = Math.random() * maxDepth;  // Z轴深度
             }
 
             update() {
-                this.y += this.speed;
-                if (this.y > canvas.height) {
-                    this.y = 0;
-                    this.x = Math.random() * canvas.width;
+                this.angle += this.speed;
+                if (this.angle > Math.PI * 2) {
+                    this.angle -= Math.PI * 2;
                 }
-                this.opacity += (Math.random() - 0.5) * 0.1;
-                if (this.opacity < 0) this.opacity = 0;
-                if (this.opacity > 1) this.opacity = 1;
+                this.depth -= 2;  // 向中心推进
+                if (this.depth <= 0) {
+                    this.reset();
+                }
             }
 
             draw() {
-                ctx.globalAlpha = this.opacity;
+                const perspective = maxDepth / (maxDepth - this.depth);
+                const x = centerX + Math.cos(this.angle) * this.radius * perspective;
+                const y = centerY + Math.sin(this.angle) * this.radius * perspective;
+                const size = this.size * perspective;
+
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'white';
+                ctx.arc(x, y, size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${1 - this.depth / maxDepth})`;
                 ctx.fill();
-                ctx.globalAlpha = 1;
             }
         }
 
         function createStars() {
             for (let i = 0; i < numStars; i++) {
-                const x = Math.random() * canvas.width;
-                const y = Math.random() * canvas.height;
-                const size = Math.random() * 2;
-                const speed = Math.random() * 1 + 0.5;
-                stars.push(new Star(x, y, size, speed));
+                stars.push(new Star());
             }
         }
 
