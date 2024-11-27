@@ -111,13 +111,18 @@
 
         let isPlaying = false;
 
+        // 添加用户点击启动音频播放的功能
         musicToggle.addEventListener('click', () => {
             if (isPlaying) {
                 backgroundMusic.pause();
                 musicToggle.textContent = '🎵 播放音乐';
             } else {
-                backgroundMusic.play();
-                musicToggle.textContent = '⏸ 暂停音乐';
+                backgroundMusic.play().then(() => {
+                    musicToggle.textContent = '⏸ 暂停音乐';
+                }).catch((error) => {
+                    console.error("音乐播放失败", error);
+                    alert("无法播放音乐，请检查浏览器音频权限设置！");
+                });
             }
             isPlaying = !isPlaying;
         });
