@@ -1,54 +1,26 @@
-document.getElementById('addBoxButton').addEventListener('click', function() {
-    const container = document.getElementById('container');
-    const box = document.createElement('div');
-    box.className = 'box';
-    box.innerHTML = '<p contenteditable="false">双击编辑文本</p>';
-    box.addEventListener('dblclick', function() {
-        this.querySelector('p').contentEditable = 'true';
-        this.querySelector('p').focus();
-        box.classList.add('editing');
-    });
-    box.querySelector('p').addEventListener('blur', function() {
-        box.classList.remove('editing');
-        this.contentEditable = 'false';
-    });
-
-    // Make the box draggable
-    let pos = {top: 0, left: 0, x: 0, y: 0};
-    box.addEventListener('mousedown', dragStart);
-    box.addEventListener('mouseup', dragEnd);
-    box.addEventListener('mousemove', drag);
-
-    function dragStart(e) {
-        e.preventDefault();
-        if (!box.classList.contains('editing')) {
-            pos = {
-                left: box.offsetLeft - e.clientX,
-                top: box.offsetTop - e.clientY,
-                x: e.clientX,
-                y: e.clientY
-            };
-            box.style.userSelect = "none";
-            document.addEventListener('mousemove', drag);
-            document.addEventListener('mouseup', dragEnd);
-        }
+function createStars(num) {
+    const container = document.querySelector('body');
+    for (let i = 0; i < num; i++) {
+        let star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random() * 100 + 'vw';
+        star.style.top = Math.random() * 100 + 'vh';
+        star.style.animationDelay = Math.random() * 20 + 's';
+        container.appendChild(star);
     }
+}
 
-    function drag(e) {
-        pos.left = pos.left + e.clientX - pos.x;
-        pos.top = pos.top + e.clientY - pos.y;
-        pos.x = e.clientX;
-        pos.y = e.clientY;
-
-        box.style.left = `${pos.left}px`;
-        box.style.top = `${pos.top}px`;
+function createComets(num) {
+    const container = document.querySelector('body');
+    for (let i = 0; i < num; i++) {
+        let comet = document.createElement('div');
+        comet.className = 'comet';
+        comet.style.left = Math.random() * 100 + 'vw';
+        comet.style.top = Math.random() * -20 + 'vh'; // Start above the screen
+        comet.style.animationDelay = Math.random() * 5 + 's';
+        container.appendChild(comet);
     }
+}
 
-    function dragEnd() {
-        document.removeEventListener('mousemove', drag);
-        document.removeEventListener('mouseup', dragEnd);
-        box.style.userSelect = "auto";
-    }
-
-    container.appendChild(box);
-});
+createStars(100); // 创建100颗星星
+createComets(5);  // 创建5条流星
