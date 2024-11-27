@@ -111,13 +111,17 @@
 
         let isPlaying = false;
 
-        // 添加用户点击启动音频播放的功能
+        // 使用muted调试
+        backgroundMusic.muted = true;  // 初始设置为静音，直到播放
+
         musicToggle.addEventListener('click', () => {
             if (isPlaying) {
                 backgroundMusic.pause();
                 musicToggle.textContent = '🎵 播放音乐';
             } else {
+                // 先播放，确保能够播放成功
                 backgroundMusic.play().then(() => {
+                    backgroundMusic.muted = false;  // 取消静音
                     musicToggle.textContent = '⏸ 暂停音乐';
                 }).catch((error) => {
                     console.error("音乐播放失败", error);
